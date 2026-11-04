@@ -25,7 +25,7 @@ test:
 lint: lint-ruff lint-pyrefly
 
 lint-ruff:
-	uvx ruff check .
+	$(UV) run ruff check .
 
 lint-pyrefly:
-	uvx pyrefly check
+	$(UV) run pyrefly check
