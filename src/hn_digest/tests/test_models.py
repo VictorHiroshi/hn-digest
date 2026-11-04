@@ -24,7 +24,13 @@ def test_story_is_immutable():
 
 
 def test_parse_story():
-    raw_story: dict[str, object] = {"id": 1, "title": "Example", "url": "https://example.com", "score": 10, "by": "alice"}
+    raw_story: dict[str, object] = {
+        "id": 1,
+        "title": "Example",
+        "url": "https://example.com",
+        "score": 10,
+        "by": "alice",
+    }
 
     assert _parse_story(raw_story) == Story(
         id=1,

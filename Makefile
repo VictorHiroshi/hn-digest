@@ -20,7 +20,7 @@ install-uv:
 	fi
 
 test:
-	uvx pytest
+	$(UV) run --group dev pytest
 
 lint: lint-ruff lint-pyrefly
 
