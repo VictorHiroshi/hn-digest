@@ -20,7 +20,7 @@ install-uv:
 	fi
 
 test:
-	$(UV) run --group dev pytest
+	$(UV) run --group dev pytest --cov=hn_digest
 
 lint: lint-ruff lint-pyrefly
 
