@@ -20,12 +20,12 @@ install-uv:
 	fi
 
 test:
-	uvx pytest
+	$(UV) run --group dev pytest --cov=hn_digest
 
 lint: lint-ruff lint-pyrefly
 
 lint-ruff:
-	uvx ruff check .
+	$(UV) run ruff check .
 
 lint-pyrefly:
-	uvx pyrefly check
+	$(UV) run pyrefly check

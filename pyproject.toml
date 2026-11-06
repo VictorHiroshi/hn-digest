@@ -22,20 +22,16 @@ build-backend = "uv_build"
 [tool.pytest.ini_options]
 pythonpath = ["src"]
 
+[tool.coverage.run]
+relative_files = true
+
 [dependency-groups]
 dev = [
     "pyrefly>=1.4.0",
     "pytest>=9.2.0",
     "pytest-asyncio>=1.4.1.post1",
-    "respx>=0.23.1",
+    "pytest-cov>=7.1.0",
     "ruff>=0.17.3",
-]
-
-
-[tool.pyrefly]
-project-includes = [
-    "**/*.py*",
-    "**/*.ipynb",
 ]
 
 [tool.ruff]
@@ -60,7 +56,6 @@ exclude = [
 
 line-length = 120
 indent-width = 4
-target-version = "py315"
 
 [tool.ruff.format]
 # Like Black, use double quotes for strings.
@@ -71,3 +66,10 @@ indent-style = "space"
 skip-magic-trailing-comma = false
 # Like Black, automatically detect the appropriate line ending.
 line-ending = "auto"
+
+[tool.pyrefly]
+python-interpreter-path = ".venv/bin/python"
+project-includes = [
+    "**/*.py*",
+    "**/*.ipynb",
+]
